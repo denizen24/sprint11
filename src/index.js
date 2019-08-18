@@ -1,8 +1,8 @@
-//import Card from './blocks/place-card/place-card';
-import CardList from './blocks/places-list/places-list';
-import Popup from './blocks/popup/popup';
+import "../src/style.css";
+import CardList from '../blocks/places-list/places-list';
+import Popup from '../blocks/popup/popup';
 
-fetch('http://95.216.175.5/cohort0/users/me', {
+fetch('http://praktikum.tk/cohort0/users/me', {
     headers: {
         authorization: '77cc3d84-97a1-47d6-8548-cefc66c159d6'
     }
@@ -23,7 +23,7 @@ fetch('http://95.216.175.5/cohort0/users/me', {
 
 let initialCards = [];
 
-fetch('http://95.216.175.5/cohort0/cards', {
+fetch('http://praktikum.tk/cohort0/cards', {
     headers: {
         authorization: '77cc3d84-97a1-47d6-8548-cefc66c159d6'
     }
@@ -106,7 +106,7 @@ form1.addEventListener('submit', function (event) {
             document.querySelector('.user-info__job').textContent = about.value
             document.querySelector('.popup1__button').classList.remove('popup1__button__active')
 
-            fetch('http://95.216.175.5/cohort0/users/me', {
+            fetch('http://praktikum.tk/cohort0/users/me', {
                 method: 'PATCH',
                 headers: {
                     authorization: '77cc3d84-97a1-47d6-8548-cefc66c159d6',

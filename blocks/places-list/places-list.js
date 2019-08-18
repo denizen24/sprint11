@@ -1,4 +1,4 @@
-import Card from './blocks/place-card/place-card';
+import Card from '../place-card/place-card';
 
 export default class CardList {
     constructor(domEl, arrCard) {

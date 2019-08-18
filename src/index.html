@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mesto</title>
-  <link rel="stylesheet" href="./pages/index.css">
+  <link rel="stylesheet" href="<%=htmlWebpackPlugin.files.chunks.main.css %>">
 </head>
 <body>
   <div class="root">
     <header class="header root__section">
-      <img src="./images/logo.svg" alt="mesto logo" class="logo">
+      <img src="../images/logo.svg" alt="mesto logo" class="logo">
     </header>
     <div class="profile root__section">
       <div class="user-info">
@@ -27,7 +27,7 @@
     </div>
     <div class="popup">
       <div class="popup__content">
-        <img src="./images/close.svg" alt="" class="popup__close">
+        <img src="../images/close.svg" alt="" class="popup__close">
         <h3 class="popup__title">Новое место</h3>
         <form class="popup__form" name="new">
             <input type="text" name="name" class="popup__input popup__input_type_name" placeholder="Название">
@@ -40,7 +40,7 @@
     </div>
     <div class="popup1">
       <div class="popup1__content">
-        <img src="./images/close.svg" alt="" class="popup1__close">
+        <img src="../images/close.svg" alt="" class="popup1__close">
         <h3 class="popup1__title">Редактировать профиль</h3>
         <form class="popup1__form" name="new1">
             <input type="text" name="name1" class="popup1__input popup1__input_type_name" placeholder="Имя">
@@ -53,12 +53,12 @@
     </div>
     <div class="popup2">
       <div class="popup2__content">
-        <img src="./images/close.svg" alt="" class="popup2__close">
+        <img src="../images/close.svg" alt="" class="popup2__close">
         <img src="" alt="" class="popup2__image">
       </div>
     </div>
   </div>
-  <script src="script.js"></script>
+  <script type="module" src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
   
 </body>
 </html>
