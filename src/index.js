@@ -1,13 +1,11 @@
 import "../src/style.css";
 import CardList from '../blocks/places-list/places-list';
 import Popup from '../blocks/popup/popup';
+import ModuleFetch from "../blocks/moduleFetch";
 
-fetch('http://praktikum.tk/cohort0/users/me', {
-    headers: {
-        authorization: '77cc3d84-97a1-47d6-8548-cefc66c159d6'
-    }
-})
-    
+const cardsAPI = new ModuleFetch();
+/* Запрос данных автора */
+cardsAPI.authorCheck()
     .then((res) => {if (res.ok) {
     return res.json();}
     })
@@ -23,11 +21,7 @@ fetch('http://praktikum.tk/cohort0/users/me', {
 
 let initialCards = [];
 
-fetch('http://praktikum.tk/cohort0/cards', {
-    headers: {
-        authorization: '77cc3d84-97a1-47d6-8548-cefc66c159d6'
-    }
-})
+cardsAPI.cardsBaseSet()//карточки набор обязательный
     .then((res) => {if (res.ok) {
     return res.json();}
     })
@@ -106,17 +100,7 @@ form1.addEventListener('submit', function (event) {
             document.querySelector('.user-info__job').textContent = about.value
             document.querySelector('.popup1__button').classList.remove('popup1__button__active')
 
-            fetch('http://praktikum.tk/cohort0/users/me', {
-                method: 'PATCH',
-                headers: {
-                    authorization: '77cc3d84-97a1-47d6-8548-cefc66c159d6',
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    name: name.value,
-                    about: about.value
-                })
-            })
+            cardsAPI.userEdit(name.value, about.value) // редактирование автора 
                 .then((res) => {if (res.ok) {
                     return res.json();}
                 })

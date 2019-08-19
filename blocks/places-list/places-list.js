@@ -1,6 +1,6 @@
 import Card from '../place-card/place-card';
 
-export default class CardList {
+export default class PlacesList {
     constructor(domEl, arrCard) {
       this.domEl = domEl;
       this.arrCard = arrCard;

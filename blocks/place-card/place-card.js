@@ -1,5 +1,7 @@
+import PopupCard from '../popup/popup';
+const popupImg = new PopupCard(document.querySelector('.popup2'), 'popup2_is-opened');
 
-export default class Card {// класс карточки
+export default class PlaceCard {// класс карточки
     constructor(name, url) {
         this.name = name;
         this.url = url;
